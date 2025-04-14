@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Love You Baby</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#ffe0f0, #ffddee);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    input, button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 18px;
+    }
+    button {
+      background-color: hotpink;
+      color: white;
+      cursor: pointer;
+    }
+    .hidden { display: none; }
+    img {
+      max-width: 100%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="step1">
+    <h2>Type something to begin...</h2>
+    <input type="text" id="loveInput" placeholder="I love you baby" />
+    <br>
+    <button onclick="checkLove()">Next</button>
+  </div>
+
+  <div class="container hidden" id="step2">
+    <p style="font-size: 18px;">ik tera mood thoda off ha due to some reasons and haan mood toh uplift nai kar paara pr ek chota sa try aur ek chota sa cute effortt meri princess ke liye.<br><br>my baby you're the reason for my happiness. itna sad mt hua kr and specially jb ma terse dur hu i feel incomplete without you my love and i am incomplete without my cutiepie.<br><br>zyda pyaar ni krra yhn kyunki i want to do it on call i just love you and i am always here for you bss itna dimaag mie bitha le.<br><br>mmuahhhhhhhh. and btw tu chz bdi ha mst mst nai tu meri jaan bhott mst ha this one is better. Babyy you are my whole heart bs khush rha kr 💖</p>
+    <button onclick="showWorld()">🌍 Click to Reveal</button>
+  </div>
+
+  <div class="container hidden" id="step3">
+    <img src="./girlfriend.jpg" alt="My Love" />
+    <br>
+    <button onclick="showProposal()">Next</button>
+  </div>
+
+  <div class="container hidden" id="step4">
+    <h2>Will you be my better half? 💍</h2>
+    <button onclick="finalAnswer('yes')">Yes 💖</button>
+    <button onclick="finalAnswer('think')">Think about it 🤔</button>
+  </div>
+
+  <div class="container hidden" id="step5">
+    <h2>Yayyy! You said YES! 💕💍</h2>
+    <p>Ab toh party banti hai 🎉</p>
+  </div>
+
+  <script>
+    function checkLove() {
+      const val = document.getElementById("loveInput").value.trim().toLowerCase();
+      if (val === "i love you baby") {
+        document.getElementById("step1").classList.add("hidden");
+        document.getElementById("step2").classList.remove("hidden");
+      } else {
+        alert("Type exactly: I love you baby 💕");
+      }
+    }
+
+    function showWorld() {
+      document.getElementById("step2").classList.add("hidden");
+      document.getElementById("step3").classList.remove("hidden");
+    }
+
+    function showProposal() {
+      document.getElementById("step3").classList.add("hidden");
+      document.getElementById("step4").classList.remove("hidden");
+    }
+
+    function finalAnswer(answer) {
+      document.getElementById("step4").classList.add("hidden");
+      document.getElementById("step5").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
